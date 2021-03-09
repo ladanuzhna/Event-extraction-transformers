@@ -7,10 +7,13 @@
 ├── src                    # folder of 2 versions: 
 │   ├── BERT (scratch)          # Experimental implementation from scratch with no ACE pretraining
 │   ├── BERT (paper)            # Implementation from "Event Extraction by Answering (Almost) Natural Questions"
-│       └── unit                # Unit tests
-│       └── unit                # Unit tests
-│       └── unit                # Unit tests
-└── figures
+│       └── args_qa_thresh_output                # Logs from running argument extraction
+│       └── trigger_qa_output                    # Logs from runnign trigger extraction
+│       └── code                                 # Scripts for running trigger and argument extraction
+|       └── data                                 # Scripts for running trigger and argument extraction
+|       └── proc                                 # Scripts for running trigger and argument extraction
+|       └── question templates                   # Scripts for running trigger and argument extraction
+└── figures #figures used in README
 
 ```
 
@@ -268,17 +271,23 @@ We process each type of event, line by line, seperating classes and arguments of
                 query_templates[event_type] = dict()
             if arg_name not in query_templates[event_type]:
                 query_templates[event_type][arg_name] = list()
+Template 0 (just argument name):
 
-            # 0 template arg_name
             query_templates[event_type][arg_name].append(arg_name)
-            # 1 template arg_name + in trigger (replace [trigger] when forming the instance)
+
+Template 1 (arg_name + in trigger) (
+
             query_templates[event_type][arg_name].append(arg_name + " in [trigger]")
-            # 2 template arg_query
+            
+Template 2 (argument query)
+
             query_templates[event_type][arg_name].append(query)
-            # 3 arg_query + trigger (replace [trigger] when forming the instance)
+            
+Template 3 (arg_query + trigger) 
+
             query_templates[event_type][arg_name].append(query[:-1] + " in [trigger]?")
             
-We do the same for both files.
+We do the same for both files. In the above templates the [trigger] is getting replaced when forming an instance
 
 4. Use template questions to pass them along input text to BERT_Argument and extract arguments of event
 ![plot](./figures/final_res.png)
