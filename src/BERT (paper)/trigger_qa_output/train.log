@@ -1,0 +1,49 @@
+Namespace(add_lstm=False, dev_file='./data/ace-event/processed-data/default-settings/json/dev_convert.json', do_eval=True, do_lower_case=False, do_train=True, eval_batch_size=8, eval_metric='f1_c', eval_per_epoch=3, eval_test=False, fp16=False, gradient_accumulation_steps=1, learning_rate=4e-05, loss_scale=0, lstm_lr=None, model='bert-base-uncased', model_dir='trigger_qa_output/epoch0-step0', no_cuda=False, nth_query=5, num_train_epochs=7.0, output_dir='trigger_qa_output', seed=42, test_file='./data/ace-event/processed-data/default-settings/json/test_convert.json', train_batch_size=8, train_file='./data/ace-event/processed-data/default-settings/json/train_convert.json', train_mode='random_sorted', verbose_logging=False, warmup_proportion=0.1)
+***** Dev *****
+  Num orig examples = 256
+  Batch size = 8
+***** Train *****
+  Num orig examples = 1019
+  Batch size = 8
+  Num steps = 896
+Start epoch #0 (lr = 4e-05)...
+Epoch: 0, Step: 1 / 128, used_time = 6.28s, loss = 2.804914
+Epoch: 0, Step: 1 / 128, used_time = 48.38s, loss = 2.804914
+!!! Best dev f1_c (lr=4e-05, epoch=0): p_c: 0.02, r_c: 1.10, f1_c: 0.04, p_i: 1.98, r_i: 98.90, f1_i: 3.89
+Epoch: 0, Step: 42 / 128, used_time = 319.18s, loss = 0.781058
+Epoch: 0, Step: 84 / 128, used_time = 549.18s, loss = 0.435625
+Epoch: 0, Step: 126 / 128, used_time = 776.05s, loss = 0.316285
+Start epoch #1 (lr = 4e-05)...
+Epoch: 1, Step: 1 / 128, used_time = 827.62s, loss = 0.309918
+Epoch: 1, Step: 42 / 128, used_time = 1086.03s, loss = 0.252545
+Epoch: 1, Step: 84 / 128, used_time = 1316.82s, loss = 0.216744
+Epoch: 1, Step: 126 / 128, used_time = 1552.13s, loss = 0.192159
+Start epoch #2 (lr = 4e-05)...
+Epoch: 2, Step: 1 / 128, used_time = 1597.58s, loss = 0.190292
+Epoch: 2, Step: 42 / 128, used_time = 1821.91s, loss = 0.169297
+Epoch: 2, Step: 42 / 128, used_time = 1852.70s, loss = 0.169297
+!!! Best dev f1_c (lr=4e-05, epoch=2): p_c: 73.33, r_c: 36.26, f1_c: 48.53, p_i: 82.22, r_i: 40.66, f1_i: 54.41
+Epoch: 2, Step: 84 / 128, used_time = 2055.99s, loss = 0.154244
+Epoch: 2, Step: 84 / 128, used_time = 2088.33s, loss = 0.154244
+!!! Best dev f1_c (lr=4e-05, epoch=2): p_c: 78.72, r_c: 40.66, f1_c: 53.62, p_i: 80.85, r_i: 41.76, f1_i: 55.07
+Epoch: 2, Step: 126 / 128, used_time = 2295.45s, loss = 0.142050
+Start epoch #3 (lr = 4e-05)...
+Epoch: 3, Step: 1 / 128, used_time = 2343.17s, loss = 0.141249
+Epoch: 3, Step: 42 / 128, used_time = 2569.72s, loss = 0.130503
+Epoch: 3, Step: 84 / 128, used_time = 2810.88s, loss = 0.121765
+Epoch: 3, Step: 126 / 128, used_time = 3045.48s, loss = 0.113625
+Start epoch #4 (lr = 4e-05)...
+Epoch: 4, Step: 1 / 128, used_time = 3088.40s, loss = 0.113076
+Epoch: 4, Step: 42 / 128, used_time = 3323.96s, loss = 0.106013
+Epoch: 4, Step: 42 / 128, used_time = 3358.91s, loss = 0.106013
+!!! Best dev f1_c (lr=4e-05, epoch=4): p_c: 73.58, r_c: 42.86, f1_c: 54.17, p_i: 77.36, r_i: 45.05, f1_i: 56.94
+Epoch: 4, Step: 84 / 128, used_time = 3771.91s, loss = 0.099830
+Epoch: 4, Step: 84 / 128, used_time = 3809.80s, loss = 0.099830
+!!! Best dev f1_c (lr=4e-05, epoch=4): p_c: 78.00, r_c: 42.86, f1_c: 55.32, p_i: 78.00, r_i: 42.86, f1_i: 55.32
+Epoch: 4, Step: 126 / 128, used_time = 4379.51s, loss = 0.094287
+Start epoch #5 (lr = 4e-05)...
+Epoch: 5, Step: 1 / 128, used_time = 4452.40s, loss = 0.093966
+Epoch: 5, Step: 42 / 128, used_time = 5355.28s, loss = 0.089297
+Epoch: 5, Step: 42 / 128, used_time = 5392.49s, loss = 0.089297
+!!! Best dev f1_c (lr=4e-05, epoch=5): p_c: 71.67, r_c: 47.25, f1_c: 56.95, p_i: 76.67, r_i: 50.55, f1_i: 60.93
+Epoch: 5, Step: 84 / 128, used_time = 6088.36s, loss = 0.084777

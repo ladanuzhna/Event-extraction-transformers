@@ -1,0 +1,38 @@
+Namespace(add_if_trigger_embedding=False, des_file='./question_templates/description_queries.csv', dev_file='./data/ace-event/processed-data/default-settings/json/dev_convert.json', do_eval=True, do_lower_case=False, do_train=True, eval_batch_size=8, eval_metric='f1_c', eval_per_epoch=2, eval_test=False, fp16=False, gold_file='./data/ace-event/processed-data/default-settings/json/dev_convert.json', gradient_accumulation_steps=1, larger_than_cls=True, learning_rate=4e-05, loss_scale=0, max_answer_length=3, max_seq_length=180, model='bert-base-uncased', model_dir='args_qa_thresh_output/epoch0-step0', n_best_size=20, no_cuda=False, normal_file='./question_templates/arg_queries.csv', nth_query=5, num_train_epochs=6.0, output_dir='args_qa_thresh_output', seed=42, test_file='./trigger_qa_output/epoch5-step0/trigger_predictions.json', train_batch_size=8, train_file='./data/ace-event/processed-data/default-settings/json/train_convert.json', train_mode='random_sorted', version_2_with_negative=False, warmup_proportion=0.1)
+***** Dev *****
+  Num orig examples = 256
+  Num split examples = 423
+  Batch size = 8
+***** Train *****
+  Num orig examples = 1019
+  Num split examples = 1041
+  Batch size = 8
+  Num steps = 786
+Start epoch #0 (lr = 4e-05)...
+Epoch: 0, Step: 1 / 131, used_time = 102.54s, loss = 4.961727
+!!! Best dev f1_c (lr=4e-05, epoch=0): p_c: 0.75, r_c: 3.45, f1_c: 1.23, p_i: 3.93, r_i: 4.31, f1_i: 4.11, best_na_thresh: -0.12972
+Start epoch #1 (lr = 4e-05)...
+Epoch: 1, Step: 130 / 131, used_time = 2581.59s, loss = 1.030522
+!!! Best dev f1_c (lr=4e-05, epoch=1): p_c: 40.85, r_c: 25.00, f1_c: 31.02, p_i: 64.79, r_i: 30.17, f1_i: 41.17, best_na_thresh: -0.51521
+Start epoch #2 (lr = 4e-05)...
+Epoch: 2, Step: 1 / 131, used_time = 2694.90s, loss = 1.026432
+!!! Best dev f1_c (lr=4e-05, epoch=2): p_c: 43.24, r_c: 27.59, f1_c: 33.68, p_i: 67.57, r_i: 33.62, f1_i: 44.90, best_na_thresh: -0.71370
+Epoch: 2, Step: 130 / 131, used_time = 4062.54s, loss = 0.866578
+!!! Best dev f1_c (lr=4e-05, epoch=2): p_c: 54.10, r_c: 27.59, f1_c: 36.54, p_i: 70.49, r_i: 31.90, f1_i: 43.92, best_na_thresh: -0.82175
+Start epoch #3 (lr = 4e-05)...
+Start epoch #4 (lr = 4e-05)...
+Epoch: 4, Step: 65 / 131, used_time = 6082.64s, loss = 0.699263
+!!! Best dev f1_c (lr=4e-05, epoch=4): p_c: 45.24, r_c: 31.90, f1_c: 37.41, p_i: 71.43, r_i: 40.52, f1_i: 51.71, best_na_thresh: -0.28606
+Epoch: 4, Step: 130 / 131, used_time = 6647.05s, loss = 0.659663
+!!! Best dev f1_c (lr=4e-05, epoch=4): p_c: 38.52, r_c: 37.93, f1_c: 38.23, p_i: 63.11, r_i: 52.59, f1_i: 57.37, best_na_thresh: -0.50058
+Start epoch #5 (lr = 4e-05)...
+Epoch: 5, Step: 1 / 131, used_time = 6755.10s, loss = 0.657933
+!!! Best dev f1_c (lr=4e-05, epoch=5): p_c: 38.98, r_c: 37.93, f1_c: 38.45, p_i: 64.41, r_i: 52.59, f1_i: 57.90, best_na_thresh: -0.38960
+Epoch: 5, Step: 65 / 131, used_time = 7343.08s, loss = 0.619636
+!!! Best dev f1_c (lr=4e-05, epoch=5): p_c: 47.13, r_c: 34.48, f1_c: 39.83, p_i: 72.41, r_i: 43.10, f1_i: 54.04, best_na_thresh: -1.13466
+Running test: 0 / 53
+Running test: 10 / 53
+Running test: 20 / 53
+Running test: 30 / 53
+Running test: 40 / 53
+Running test: 50 / 53

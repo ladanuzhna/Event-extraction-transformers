@@ -1,0 +1,10 @@
+prec_c = 78.0
+recall_c = 42.857142857142854
+f1_c = 55.31914893617021
+prec_i = 78.0
+recall_i = 42.857142857142854
+f1_i = 55.31914893617021
+global_step = 596
+epoch = 4
+learning_rate = 4e-05
+batch_size = 8
