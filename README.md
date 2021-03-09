@@ -1,4 +1,4 @@
-# Finance-event-extraction-using-language-models
+# Event extraction using transformers
 
 ## FOLDER STRUCTURE 
 
@@ -10,10 +10,10 @@
 │       └── args_qa_thresh_output                # Logs from running argument extraction
 │       └── trigger_qa_output                    # Logs from runnign trigger extraction
 │       └── code                                 # Scripts for running trigger and argument extraction
-|       └── data                                 # Scripts for running trigger and argument extraction
-|       └── proc                                 # Scripts for running trigger and argument extraction
-|       └── question templates                   # Scripts for running trigger and argument extraction
-└── figures #figures used in README
+|       └── data                                 # Raw and processed data should go here
+|       └── proc                                 # Scripts for data preprocessing
+|       └── question templates                   # .csv files of tempaltes for argument extractions
+└── figures                #figures used in README
 
 ```
 
