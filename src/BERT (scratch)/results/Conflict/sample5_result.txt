@@ -1,0 +1,6 @@
+Trigger >>> the saudi - led military coalition announced the iran - allied houthis had launched a ballistic missile toward riyadh
+Place >>> riyadh
+Target >>> riyadh
+Attacker >>> houthis
+Instrument >>> ballistic missile
+Victim >>> houthis

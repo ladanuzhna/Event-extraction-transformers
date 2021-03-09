@@ -1,0 +1,6 @@
+Trigger >>> three french nationals have died in a knife attack at a church in nice , in what french president emmanuel macron said was an terrorist attack
+Place >>> a church in nice
+Target >>> brahim aioussaoi
+Attacker >>> brahim aioussaoi
+Instrument >>> knife
+Victim >>> brahim aioussaoi

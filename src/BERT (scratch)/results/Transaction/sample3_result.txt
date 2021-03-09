@@ -1,0 +1,6 @@
+Trigger >>> rocket lab struck a deal with vector corporation
+Buyer >>> vector corporation
+Artifact >>> vector corporation
+Seller >>> vector corporation
+Place >>> u . s . - new zealand
+Beneficiary >>> vector corporation

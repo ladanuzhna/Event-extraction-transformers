@@ -1,0 +1,6 @@
+Trigger >>> tesla has bought $ 1 . 5 billion worth of bitcoin
+Buyer >>> tesla
+Artifact >>> bitcoin
+Seller >>> tesla
+Place >>> bitcoin
+Beneficiary >>> tesla

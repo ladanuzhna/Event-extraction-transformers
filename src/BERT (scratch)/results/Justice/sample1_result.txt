@@ -1,0 +1,5 @@
+Trigger >>> zoom
+Defendant >>> derek chauvin
+Justice.Trial-Crime >>> 3rd degree murder
+Justice.Trial-Place >>> zoom
+Adjudicator >>> jeanne cochran

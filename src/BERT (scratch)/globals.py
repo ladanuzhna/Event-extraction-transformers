@@ -1,0 +1,7 @@
+DIR_DATA="src/sample_data"
+CHECKPOINT_SEC = 60
+UNCASED = True
+LARGE_BERT = True
+EPOCHS_TRAIN = 3
+LEARN_RATE = 5e-5
+EVAL_MODE = True

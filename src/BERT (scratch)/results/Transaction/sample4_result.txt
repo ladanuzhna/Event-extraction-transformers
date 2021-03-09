@@ -1,0 +1,6 @@
+Trigger >>> celgene
+Buyer >>> bms
+Artifact >>> celgene
+Seller >>> bms
+Place >>> united states
+Beneficiary >>> b

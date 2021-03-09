@@ -1,0 +1,5 @@
+Transaction.Transfer-Ownership_Buyer,Who is the buying agent?
+Transaction.Transfer-Ownership_Artifact,Who was bought or sold?
+Transaction.Transfer-Ownership_Seller,Who is the selling agent?
+Transaction.Transfer-Ownership_Place,Where the sale takes place?
+Transaction.Transfer-Ownership_Beneficiary,Who benefits from the transaction?

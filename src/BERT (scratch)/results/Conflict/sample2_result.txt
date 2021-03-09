@@ -1,0 +1,6 @@
+Trigger >>> carried out airstrikes at iranian - backed militias in syria
+Place >>> syria
+Target >>> iranian - backed militias
+Attacker >>> iranian - backed militias
+Instrument >>> airstrikes
+Victim >>> iranian - backed militias

@@ -1,0 +1,5 @@
+Trigger >>> map of hearing in which fate of holmes will be decided . it will be happening at san jose federal courthouse
+Defendant >>> elizabeth holmes
+Justice.Trial-Crime >>> unproven technology and dubious business practices
+Justice.Trial-Place >>> san jose federal courthouse
+Adjudicator >>> judge edward davila

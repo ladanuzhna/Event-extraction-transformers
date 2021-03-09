@@ -1,0 +1,6 @@
+Trigger >>> pfizer bought mylan
+Buyer >>> pfizer
+Artifact >>> mylan
+Seller >>> upjohn
+Place >>> up
+Beneficiary >>> pfizer to expand its subsidiary upjohn

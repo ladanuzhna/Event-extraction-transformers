@@ -1,0 +1,6 @@
+Trigger >>> the rise in apple ' s stock happened after the letter of berkshire hathaway chairman and ceo warren buffett
+Buyer >>> berkshire hathaway
+Artifact >>> apple ' s stock
+Seller >>> berkshire hathaway
+Place >>> berkshire hathaway
+Beneficiary >>> berkshire hathaway chairman and ceo warren buffett
