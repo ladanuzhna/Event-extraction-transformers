@@ -20,7 +20,7 @@ Presentation of the project: https://www.youtube.com/watch?v=gyJwuI0jI7E
 ```
 
 ## TASK
-Imagine having thousands of articles about what happened on the stock market on a given day - and only 1 hour to analyze them. This is not a completely unrealistic situation. Many research groups currently working on a so-called "event extraction" task. Usual event extraction requirements include:
+Imagine having thousands of articles about what happened on the stock market on a given day - and only 1 hour to analyze them. This is not a completely unrealistic situation. Many research groups are currently working on a so-called "event extraction" task. Usual event extraction requirements include:
 1. Detecting the event type by identifying the main trigger (What happened? What type of event is this?)
 2. Extracting its corresponding arguments (Where did it happen? When? Who is the main agent?)
 
@@ -28,7 +28,7 @@ There is a great variety of existing solutions. However, they all rely too heavi
 
 
 ## BERT
-BERT is a transformer, meaning it incorporates a concept of attention into encoder-decoder architecture. Attention units within BERT produce an embedding for every token in a sentence including other relevant tokens weighted by attention.
+BERT is a transformer, meaning it incorporates a concept of attention into encoder-decoder architecture. Attention units within BERT produce an embedding for every token in a sentence and include other relevant tokens weighted by attention.
 
 BERT has been pretrained on ***Masked Language Modeling*** and ***Next Sentence Prediction***.  
 - In ***masked language modeling*** instead of predicting every next token, a percentage of input tokens is masked at random and only those masked tokens are predicted.
@@ -45,7 +45,7 @@ For both of these architectures, if the question is formulated properly, we migh
 3. It works in a zero-shot setting
 
 How does preparation for BERT looks like?
-As with any language model, we can not simply feed text into the network. While other networks use embeddings like Word2Vec or Glove, BERT has its own pretrained tokenizer. Lets see how it works on a small example:
+As with any language model, we can not simply feed text into the network. While other networks use embeddings like Word2Vec or Glove, BERT has its own pretrained tokenizer with internal dictionary. Lets see how it works on a small example:
 
             ! pip install transformers
             from transformers import BertTokenizer
@@ -109,7 +109,7 @@ The result is split into train, test and dev json files. In each of this files, 
 python scripts/data/ace-event/convert_examples.py
 ```
 
-## PIPELINE, RUNNING CODE
+## ACTUAL PIPELINE
 
 As we already saw, BERT might have a great potential for event extraction. We followed a procedure outlined in paper "Event Extraction by Answering (Almost) Natural Questions":
 
@@ -195,7 +195,7 @@ But there are not probabilities! We have a minus sign there! Yes. Logits can now
 
             model = BertForQuestionAnswering.from_pretrained(args.model, cache_dir=PYTORCH_PRETRAINED_BERT_CACHE)
             
-You might be curious as to why we do not train it from scratch. Large BERT (the one we are using) has 345 million. Its pretraining took days with several TPUs. So it is easier for us to utilize transfer learning and just fine-tune the model that was pretrained for us. We then iterate through each batch for each epoch, calculating the loss and backpropagating it with pytorch optimizer (can be both initialized to Adam and SGD):
+You might be curious as to why we do not train it from scratch. Large BERT (the one we are using) has 345 million. Its pretraining took days with several TPUs. So it is easier for us to utilize transfer learning and just fine-tune the model that was pretrained for us. We then iterate through each batch for each epoch, calculating the loss and backpropagating it with pytorch optimizer (can be initialized to either Adam or SGD):
 
             for epoch in range(int(args.num_train_epochs)):
                 model.train()
@@ -318,7 +318,7 @@ The model returns a set of possible start and end tokens (or, more precisely, th
             end_index < start_index:
                         ...
              
-In all the other cases we can instantiate preliminary prediction with wrapper \_PrelimPrediction and append it to the list of candidates:
+In all the other cases we can instantiate preliminary prediction with wrapper \_PrelimPrediction and append it to the list of candidates (that can be sorted based of probabilities) :
             
             _PrelimPrediction(start_index=start_index, end_index=end_index,
                                                   start_logit=result.start_logits[start_index], end_logit=result.end_logits[end_index])
@@ -326,7 +326,7 @@ In all the other cases we can instantiate preliminary prediction with wrapper \_
 
 ## RESULTS
 
-Before we discuss our results, we want to mention that BERT is a model with hundreds of millions parameters and ACE has 600 large documents. The time required for each epoch was increasing exponentially: if the first epoch was taking 15 minutes, the second one would take more than an hour. We reckon that it is likely the case because the error went down significantly at first - and with each next step we had less and less to learn from our data. We ended up using less than a hundred documents. With all these considerations in mind, results still seemed pretty impressive compared to most existing event extraction models.
+Before we discuss our results, we want to mention that BERT is a model with hundreds of millions parameters and ACE has 600 large documents. The time required for each epoch was increasing exponentially: if the first epoch was taking 15 minutes, the second one would take more than an hour. We reckon that it is likely the case because the error went down significantly at first - and with each next step we had less and less to learn from our data. We ended up using less than a hundred documents. With all these considerations in mind, results still seem pretty impressive compared to most existing event extraction models.
 
 - Trigger extraction results
 ![plot](./figures/trigger.png)
@@ -334,6 +334,11 @@ Before we discuss our results, we want to mention that BERT is a model with hund
 - Argument extraction results
 ![plot](./figures/argument.png)
 ![plot](./figures/f1_arg.png)
+
+We also ended up writing our small toy version of the module discussed above, to test how the BERT with no pretraining will work on the task of event extraction. You can find it in BERT (scratch) folder. While precision was way lower, BERT still extracted pretty reasonable events from each text corpora
+
+![plot](./figures/example1.png)
+![plot](./figures/example2.png)
 
 ## ADAPTATIONS
 
