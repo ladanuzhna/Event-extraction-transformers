@@ -1,5 +1,7 @@
 # Event extraction using transformers
 
+Presentation of the project: https://www.youtube.com/watch?v=gyJwuI0jI7E
+
 ## FOLDER STRUCTURE 
 
 ```
@@ -8,18 +10,18 @@
 │   ├── BERT (scratch)          # Experimental implementation from scratch with no ACE pretraining
 │   ├── BERT (paper)            # Implementation from "Event Extraction by Answering (Almost) Natural Questions"
 │       └── args_qa_thresh_output                # Logs from running argument extraction
-│       └── trigger_qa_output                    # Logs from runnign trigger extraction
+│       └── trigger_qa_output                    # Logs from running trigger extraction
 │       └── code                                 # Scripts for running trigger and argument extraction
 |       └── data                                 # Raw and processed data should go here
 |       └── proc                                 # Scripts for data preprocessing
-|       └── question templates                   # .csv files of tempaltes for argument extractions
+|       └── question templates                   # .csv files of templates for argument extractions
 └── figures                #figures used in README
 
 ```
 
 ## TASK
-Imagine having a thousands articles about what happened on stock market on a given day - and only 1 hour to analyze them. This is not a completely unrealistic situation. In fact, many research groups currently work on a so-called "event extraction" task. Usual event extraction requirements include:
-1. Detecting the event type by identifying main trigger (What happened? What type of event is this?)
+Imagine having thousands of articles about what happened on the stock market on a given day - and only 1 hour to analyze them. This is not a completely unrealistic situation. Many research groups currently working on a so-called "event extraction" task. Usual event extraction requirements include:
+1. Detecting the event type by identifying the main trigger (What happened? What type of event is this?)
 2. Extracting its corresponding arguments (Where did it happen? When? Who is the main agent?)
 
 There is a great variety of existing solutions. However, they all rely too heavily on entity information for argument extraction (we need to identify entities, their semantics, use parsers or trained models...); they also do not exploit context and, as a result, do not recognize similarities of related argument roles across event types. One architecture that is able to address these issues and exploit context heavily is ***BERT*** or ***Bidirectional Encoder Representations from Transformers***
@@ -32,7 +34,7 @@ BERT has been pretrained on ***Masked Language Modeling*** and ***Next Sentence 
 - In ***masked language modeling*** instead of predicting every next token, a percentage of input tokens is masked at random and only those masked tokens are predicted.
 - ***Next sentence prediction task*** is a binary classification task in which, given a pair of sentences, we predict if the input sentence is the actual next sentence after the current one. 
 
-With this pretraining, BERT can be fine-tuned for different purposes; The first BERT we use in current tutorial (BERT Trigger) outputs type, while second (BERT Argument) one gives offsets of answers. Both used pretrained pytorch module.
+With this pretraining, BERT can be fine-tuned for different purposes; The first BERT we use in a current tutorial (BERT Trigger) outputs type, while the second (BERT Argument) one gives offsets of answers. Both used a pretrained pytorch module.
 
 ![plot](./figures/architectures.png)
 
@@ -63,7 +65,7 @@ We get an output:
 
 Where 101 and 102 are tokens indicating start and end of input.
 
-However, this transformation is not enough.  BERT normally expects inputs in the format **[CLS] sentence [SEP] -** and that is exactly what happens in read_ace_examples(...) (ACE is the dataset we use for training and testing; but more on this later). 
+However, this transformation is not enough.  BERT normally expects inputs in the format **[CLS] sentence [SEP] -** and that is exactly what happens in read_ace_examples(...). ACE is the dataset we use for training and testing - but more on this later. 
 
 There is, however, more to it. Because we want to encode both a question and a sentence together, our format is:
 
