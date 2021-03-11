@@ -101,3 +101,4 @@ if __name__  ==  "__main__":
                 f.write('Trigger >>> ' + trigger + '\n')
                 for k, v in arg_templates.items():
                     f.write(str(k) + ' >>> ' + str(v) + '\n')
+ 
