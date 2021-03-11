@@ -1,6 +1,6 @@
 # Event extraction using transformers
 
-Presentation of the project: https://www.youtube.com/watch?v=gyJwuI0jI7E
+Presentation of the project: https://www.youtube.com/watch?v=gyJwuI0jI7E 
 
 ## FOLDER STRUCTURE 
 
